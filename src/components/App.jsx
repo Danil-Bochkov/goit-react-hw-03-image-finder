@@ -18,8 +18,6 @@ class App extends React.Component {
     error: null,
   };
 
-  componentDidMount() {}
-
   componentDidUpdate(_, prevState) {
     if (
       prevState.page === this.state.page &&
