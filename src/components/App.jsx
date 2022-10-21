@@ -82,10 +82,10 @@ class App extends React.Component {
         <ImageGallery img={img} error={error} status={status}>
           <ImageGalleryItem img={img} onToggle={this.onImgClick} />
         </ImageGallery>
-        {img?.length > 0 && <Button onClick={this.loadMore} />}
+        {img.length > 0 && <Button onClick={this.loadMore} />}
         {largeImgSrc && (
           <Modal onClose={this.toggleImg}>
-            <img src={largeImgSrc} />
+            <img src={largeImgSrc} alt={this.nextName} />
           </Modal>
         )}
       </div>
