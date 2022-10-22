@@ -1,7 +1,6 @@
 import React from 'react';
 import Searchbar from './ImageGallery/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
-import ImageGalleryItem from './ImageGallery/ImageGalleryItem';
 import Modal from './ImageGallery/Modal';
 import Button from './ImageGallery/Button';
 
@@ -79,9 +78,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <Searchbar onSubmit={this.handleFormSubmit} />
-        <ImageGallery img={img} error={error} status={status}>
-          <ImageGalleryItem img={img} onToggle={this.onImgClick} />
-        </ImageGallery>
+        <ImageGallery
+          imgs={img}
+          error={error}
+          status={status}
+          onToggle={this.onImgClick}
+        ></ImageGallery>
         {img.length > 0 && <Button onClick={this.loadMore} />}
         {largeImgSrc && (
           <Modal onClose={this.toggleImg}>
